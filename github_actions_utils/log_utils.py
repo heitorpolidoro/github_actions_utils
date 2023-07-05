@@ -15,7 +15,8 @@ def github_group(group_name):
             inner_group_name = group_name
             template_dict = kwargs.copy()
             for index, name in enumerate(inspect.signature(f).parameters):
-                template_dict[name] = args[index]
+                if index < len(args):
+                    template_dict[name] = args[index]
 
             for object_attribute in objects_attributes:
                 value = template_dict

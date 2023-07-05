@@ -1,4 +1,4 @@
-NAME = "github-actions-utils"
-VERSION = "0.1.0"
-DESCRIPTION = "Utilities for GitHub Actions"
-AUTHOR = "Heitor Luis Polidoro"
+__name__ = "github-actions-utils"
+__version__ = "1.0.0"
+__description__ = 'Package of useful functions for GitHub Actions.'
+__author__ = "Heitor Luis Polidoro"
