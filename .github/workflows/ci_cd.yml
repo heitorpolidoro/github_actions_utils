@@ -70,7 +70,6 @@ jobs:
           coverage xml
           COVERALLS_REPO_TOKEN=${{ secrets.COVERALLS_REPO_TOKEN }} coveralls
 
-
   linters:
     name: Linters
     runs-on: ubuntu-latest
@@ -95,7 +94,6 @@ jobs:
     needs:
       - tests
       - linters
-      - sonarcloud
 
     steps:
       - name: Checkout
