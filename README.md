@@ -4,7 +4,24 @@
 ![GitHub Release Date](https://img.shields.io/github/release-date/heitorpolidoro/github_actions_utils)
 
 [![CI/CD](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml/badge.svg)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml)
+
+<!--
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=heitorpolidoro_github_actions_utils&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=heitorpolidoro_github_actions_utils)
+
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=heitorpolidoro_github_actions_utils&metric=ncloc&token=e0c88d0fd7cf8808b0660897a343c1cc088a3b3c)](https://sonarcloud.io/summary/new_code?id=heitorpolidoro_github_actions_utils)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=heitorpolidoro_github_actions_utils&metric=code_smells&token=e0c88d0fd7cf8808b0660897a343c1cc088a3b3c)](https://sonarcloud.io/summary/new_code?id=heitorpolidoro_github_actions_utils)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=heitorpolidoro_github_actions_utils&metric=sqale_rating&token=e0c88d0fd7cf8808b0660897a343c1cc088a3b3c)](https://sonarcloud.io/summary/new_code?id=heitorpolidoro_github_actions_utils)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=heitorpolidoro_github_actions_utils&metric=security_rating&token=e0c88d0fd7cf8808b0660897a343c1cc088a3b3c)](https://sonarcloud.io/summary/new_code?id=heitorpolidoro_github_actions_utils)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=heitorpolidoro_github_actions_utils&metric=bugs&token=e0c88d0fd7cf8808b0660897a343c1cc088a3b3c)](https://sonarcloud.io/summary/new_code?id=heitorpolidoro_github_actions_utils)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=heitorpolidoro_github_actions_utils&metric=vulnerabilities&token=e0c88d0fd7cf8808b0660897a343c1cc088a3b3c)](https://sonarcloud.io/summary/new_code?id=heitorpolidoro_github_actions_utils)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=heitorpolidoro_github_actions_utils&metric=duplicated_lines_density&token=e0c88d0fd7cf8808b0660897a343c1cc088a3b3c)](https://sonarcloud.io/summary/new_code?id=heitorpolidoro_github_actions_utils)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=heitorpolidoro_github_actions_utils&metric=reliability_rating&token=e0c88d0fd7cf8808b0660897a343c1cc088a3b3c)](https://sonarcloud.io/summary/new_code?id=heitorpolidoro_github_actions_utils)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=heitorpolidoro_github_actions_utils&metric=alert_status&token=e0c88d0fd7cf8808b0660897a343c1cc088a3b3c)](https://sonarcloud.io/summary/new_code?id=heitorpolidoro_github_actions_utils)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=heitorpolidoro_github_actions_utils&metric=sqale_index&token=e0c88d0fd7cf8808b0660897a343c1cc088a3b3c)](https://sonarcloud.io/summary/new_code?id=heitorpolidoro_github_actions_utils)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=heitorpolidoro_github_actions_utils&metric=coverage&token=e0c88d0fd7cf8808b0660897a343c1cc088a3b3c)](https://sonarcloud.io/summary/new_code?id=heitorpolidoro_github_actions_utils)
+-->
+
+[![Coverage Status](https://coveralls.io/repos/github/heitorpolidoro/github_actions_utils/badge.svg)](https://coveralls.io/github/heitorpolidoro/github_actions_utils)
 
 ![GitHub](https://img.shields.io/github/license/heitorpolidoro/github_actions_utils)
 
