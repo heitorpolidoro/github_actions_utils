@@ -42,20 +42,21 @@ jobs:
         if: steps.cache-pip.outputs.cache-hit != 'true'
         run: |
           python -m pip install --upgrade pip
-          pip install pytest pytest-cov coveralls
+          pip install pytest pytest-cov coveralls coverage-lcov
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run tests
         run: |
           coverage run --source=github_actions_utils -m pytest --cov=./ --cov-report=xml tests/
+          coverage lcov
 
       - name: Coveralls Parallel
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@v2.2.3
         with:
 #          github-token: ${{ secrets.GITHUB_TOKEN }}
           flag-name: run-${{ matrix.python-version }}
           measure: true
-          parallel: true
+          parallel: truir
 
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
@@ -71,7 +72,7 @@ jobs:
 
     steps:
       - name: Coveralls Finished
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@v2.2.3
         with:
 #          github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel-finished: true
