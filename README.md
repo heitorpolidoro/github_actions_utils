@@ -1,4 +1,12 @@
 # Github Actions Utils
+![GitHub last commit](https://img.shields.io/github/last-commit/heitorpolidoro/github_actions_utils)
+[![Latest](https://img.shields.io/github/release/heitorpolidoro/github_actions_utils.svg?label=latest)](https://github.com/heitorpolidoro/github_actions_utils/releases/latest)
+![GitHub Release Date](https://img.shields.io/github/release-date/heitorpolidoro/github_actions_utils)
+
+[![CI/CD](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml/badge.svg)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=heitorpolidoro_github_actions_utils&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=heitorpolidoro_github_actions_utils)
+
+![GitHub](https://img.shields.io/github/license/heitorpolidoro/github_actions_utils)
 
 ### Log Utils
 #### github group decorator
