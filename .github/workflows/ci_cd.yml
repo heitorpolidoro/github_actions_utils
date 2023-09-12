@@ -47,7 +47,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest --cov=./ --cov-report=xml
+          coverage run --source=github_actions_utils -m pytest --cov=./ --cov-report=xml tests/
 
       - name: Coveralls Parallel
         uses: coverallsapp/github-action@master
