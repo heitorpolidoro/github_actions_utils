@@ -63,7 +63,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   finish:
-    needs: build
+    needs: tests
     runs-on: ubuntu-latest
 
     steps:
