@@ -29,18 +29,16 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
-        if: steps.cache-pip.outputs.cache-hit != 'true'
+#        if: steps.cache-pip.outputs.cache-hit != 'true'
         run: |
           python -m pip install --upgrade pip
-          pip install pytest coveralls
+          pip install pytest-cov
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run tests
         run: |
-          coverage run --source=github_actions_utils -m pytest tests/
-          coverage lcov  # TODO precisa pro coveralls?
-          coverage xml
-          cat coverage.xml
+          pytest --cov=github_actions_utils --cov-branch --cov-report=xml
+#          pytest --cov=github_actions_utils --cov-branch --cov-report=xml --cov-report=lcov
 
       - name: Coveralls Parallel
         uses: coverallsapp/github-action@v2.2.3
