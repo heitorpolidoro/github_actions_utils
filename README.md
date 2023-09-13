@@ -3,6 +3,10 @@
 [![Latest](https://img.shields.io/github/release/heitorpolidoro/github_actions_utils.svg?label=latest)](https://github.com/heitorpolidoro/github_actions_utils/releases/latest)
 ![GitHub Release Date](https://img.shields.io/github/release-date/heitorpolidoro/github_actions_utils)
 
+<a href="https://github.com/heitorpolidoro/github_actions_utils" >
+  <img src="https://pngimg.com/d/github_PNG15.png" alt="GitHub" style="width:300px;">
+</a>
+
 [![CI/CD](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml/badge.svg)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml)
 [![Code Quality](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml/badge.svg?event=issues)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml)
 [![Code Quality](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml/badge.svg?event=pull_request)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml)
