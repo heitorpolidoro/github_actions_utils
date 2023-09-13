@@ -43,7 +43,7 @@ jobs:
           cat coverage.xml
 
       - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
+        uses: SonarSource/sonarcloud-github-action@v2.0.2
         if: matrix.python-version == '3.11'
         with:
           args: -Dsonar.python.version=${{ matrix.python-version }}
@@ -69,7 +69,6 @@ jobs:
       - name: Coveralls Finished
         uses: coverallsapp/github-action@v2.2.3
         with:
-#          github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel-finished: true
 
   linters:
