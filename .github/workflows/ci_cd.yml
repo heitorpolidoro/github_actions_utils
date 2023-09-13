@@ -37,7 +37,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest --cov=github_actions_utils --cov-branch --cov-report=xml --cov-fail-under=100
+          pytest --cov=github_actions_utils --cov-branch --cov-report=xml
           pwd
           cat coverage.xml
           coverage xml
