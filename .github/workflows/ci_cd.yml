@@ -38,11 +38,9 @@ jobs:
       - name: Run tests
         run: |
           pytest --cov=github_actions_utils --cov-branch --cov-report=xml
+          coverage xml
           pwd
           cat coverage.xml
-          coverage xml
-          cat coverage.xml
-#          pytest --cov=github_actions_utils --cov-branch --cov-report=xml --cov-report=lcov
 
       - name: Coveralls Parallel
         uses: coverallsapp/github-action@v2.2.3
