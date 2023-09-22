@@ -7,6 +7,47 @@
   <img src="https://pngimg.com/uploads/github/github_PNG15.png" alt="GitHub" style="width:300px;">
 </a>
 
+---
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/heitorpolidoro/github_actions_utils)
+
+![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/heitorpolidoro/github_actions_utils/latest)
+
+![GitHub contributors](https://img.shields.io/github/contributors-anon/heitorpolidoro/github_actions_utils)
+
+![GitHub top language](https://img.shields.io/github/languages/top/heitorpolidoro/github_actions_utils)
+
+![GitHub all releases](https://img.shields.io/github/downloads/heitorpolidoro/github_actions_utils/total)
+
+<!-- # TODO pip cache -->
+![PyPI - Downloads](https://img.shields.io/pypi/dm/github_actions_utils)
+
+![GitHub issues](https://img.shields.io/github/issues/heitorpolidoro/github_actions_utils)
+
+![GitHub pull requests](https://img.shields.io/github/issues-pr/heitorpolidoro/github_actions_utils)
+
+![GitHub Discussions](https://img.shields.io/github/discussions/heitorpolidoro/github_actions_utils)
+
+![PyPI - Status](https://img.shields.io/pypi/status/github_actions_utils)
+
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/github_actions_utils)
+
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/heitorpolidoro/github_actions_utils)
+
+![GitHub repo file count (file type)](https://img.shields.io/github/directory-file-count/heitorpolidoro/github_actions_utils)
+
+![GitHub repo file count (file extension)](https://img.shields.io/github/directory-file-count/heitorpolidoro/github_actions_utils/github_actions_utils)
+
+![GitHub repo size](https://img.shields.io/github/repo-size/heitorpolidoro/github_actions_utils)
+
+![GitHub Repo stars](https://img.shields.io/github/stars/heitorpolidoro/github_actions_utils)
+
+![GitHub watchers](https://img.shields.io/github/watchers/heitorpolidoro/github_actions_utils)
+
+![PyPI - Version](https://img.shields.io/pypi/v/github_actions_utils)
+
+---
+
+
 [![CI/CD](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml/badge.svg)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml)
 [![Code Quality](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml/badge.svg?event=issues)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml)
 [![Code Quality](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml/badge.svg?event=pull_request)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml)
