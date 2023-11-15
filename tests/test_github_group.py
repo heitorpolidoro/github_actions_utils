@@ -25,7 +25,9 @@ def test_using_parameter_value(capsys):
 
 def test_using_parameter_value_with_multiple_parameters(capsys):
     @github_group("$parameter_value1 $parameter_value2")
-    def using_parameter_value_with_multiple_parameters(parameter_value1, parameter_value2):
+    def using_parameter_value_with_multiple_parameters(
+        parameter_value1, parameter_value2
+    ):
         print(parameter_value1, parameter_value2)
 
     using_parameter_value_with_multiple_parameters("Hello,", "world!")

@@ -8,15 +8,10 @@
 </a>
 
 ---
-![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/heitorpolidoro/github_actions_utils)
 
 ![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/heitorpolidoro/github_actions_utils/latest)
-
 ![GitHub contributors](https://img.shields.io/github/contributors-anon/heitorpolidoro/github_actions_utils)
-
 ![GitHub top language](https://img.shields.io/github/languages/top/heitorpolidoro/github_actions_utils)
-
-![GitHub all releases](https://img.shields.io/github/downloads/heitorpolidoro/github_actions_utils/total)
 
 <!-- # TODO pip cache -->
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/github_actions_utils)
