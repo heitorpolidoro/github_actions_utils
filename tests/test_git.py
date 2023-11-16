@@ -9,8 +9,8 @@ def vcr_cassette_name(request):
 
 
 @pytest.mark.vcr
-def test_get_gh_repo_without_token(monkeypatch):
-    monkeypatch.setenv("GITHUB_TOKEN", "actor_token")
+def test_get_gh_repo(monkeypatch):
+    monkeypatch.setenv("GITHUB_TOKEN", "github_token")
     repo = get_gh_repo()
     assert repo.name == "github_actions_utils"
     assert repo.owner.login == "heitorpolidoro"
