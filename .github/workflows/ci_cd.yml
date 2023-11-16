@@ -13,14 +13,15 @@ jobs:
   tests:
     name: Tests
     runs-on: ubuntu-latest
-    if: github.event_name != 'workflow_dispatch'
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9, "3.10", 3.11]
+        python-version: ["3.10", 3.11, 3.12]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
@@ -33,13 +34,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest-cov
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f requirements.dev.txt ]; then pip install -r requirements.dev.txt; fi
 
       - name: Run tests
         run: |
-          pytest --cov=github_actions_utils --cov-branch --cov-report=xml
+          pytest --cov=github_actions_utils --cov-branch --cov-report=xml --vcr-record=none
           coverage xml
-          pwd
-          cat coverage.xml
+
+      - name: Override Coverage Source Path for Sonar
+        run: |
+          sed -i "s/<source>\/home\/runner\/work\/github_actions_utils\/github_actions_utils<\/source>/<source>\/github\/workspace<\/source>/g" coverage.xml
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2.0.2

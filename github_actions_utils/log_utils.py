@@ -27,9 +27,13 @@ def github_group(group_name):
                         value = getattr(value, attr, None)
                 attribute_template = object_attribute.replace(".", "_")
                 template_dict[attribute_template] = value
-                inner_group_name = re.sub(rf"\$\({attribute}\)", f"${attribute_template}", inner_group_name)
+                inner_group_name = re.sub(
+                    rf"\$\({attribute}\)", f"${attribute_template}", inner_group_name
+                )
 
-            print(f"::group::{Template(inner_group_name).safe_substitute(**template_dict)}")
+            print(
+                f"::group::{Template(inner_group_name).safe_substitute(**template_dict)}"
+            )
             resp = f(*args, **kwargs)
             print("::endgroup::")
             return resp

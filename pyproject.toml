@@ -24,3 +24,6 @@ dynamic = ["version"]
 
 [tool.setuptools.dynamic]
 version = {attr = "github_actions_utils.__version__"}
+
+[tool.flake8]
+max-line-length = 120
