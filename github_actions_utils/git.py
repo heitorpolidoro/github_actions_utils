@@ -9,7 +9,10 @@ from github.Repository import Repository
 
 def get_gh_repo(token=None) -> Repository:
     token = token or os.getenv("GITHUB_TOKEN")
-    gh = Github(auth=Token(token))
+    if token:
+        gh = Github(auth=Token(token))
+    else:
+        gh = Github()
     repo = Repo(os.getcwd())
     # Get the URL of the 'origin' remote
     remote_url = repo.remotes.origin.url
