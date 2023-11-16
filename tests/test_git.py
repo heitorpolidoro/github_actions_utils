@@ -17,12 +17,16 @@ def test_get_gh_repo(monkeypatch):
 
 
 def test_extract_owner_and_repo_name_with_dot_git():
-    owner, repo_name = extract_owner_and_repo_name("https://github.com/heitorpolidoro/github_actions_utils.git")
+    owner, repo_name = extract_owner_and_repo_name(
+        "https://github.com/heitorpolidoro/github_actions_utils.git"
+    )
     assert repo_name == "github_actions_utils"
     assert owner == "heitorpolidoro"
 
 
 def test_extract_owner_and_repo_name_without_dot_git():
-    owner, repo_name = extract_owner_and_repo_name("https://github.com/heitorpolidoro/github_actions_utils")
+    owner, repo_name = extract_owner_and_repo_name(
+        "https://github.com/heitorpolidoro/github_actions_utils"
+    )
     assert repo_name == "github_actions_utils"
     assert owner == "heitorpolidoro"
