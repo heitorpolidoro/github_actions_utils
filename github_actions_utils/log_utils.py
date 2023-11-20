@@ -1,4 +1,5 @@
 import inspect
+import os
 import re
 from string import Template
 
@@ -41,3 +42,13 @@ def github_group(group_name):
         return inner_wrapper
 
     return wrapper
+
+
+def summary(text, overwrite=False):
+    summary_file_path = os.getenv("GITHUB_STEP_SUMMARY")
+
+    # Open the file in append mode
+    mode = "w" if overwrite else "a"
+    with open(summary_file_path, mode) as f:
+        # Write to the file
+        f.write(f"{text}\n")
