@@ -2,6 +2,7 @@ name: Create Pull Request
 
 on:
   create:
+    branches: ['*']
 
 jobs:
   create-PR:
