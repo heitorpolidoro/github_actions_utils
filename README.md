@@ -5,26 +5,34 @@
   <img src="https://pngimg.com/uploads/github/github_PNG15.png" alt="GitHub" style="height:100px;">
 </a>
 
+[![Create Pull Request](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/create.yml/badge.svg)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/create.yml)
+[![Code Quality](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml/badge.svg)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml)
+[![Release](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/release.yml/badge.svg)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/release.yml)
+[![Upload Python Package](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/python-publish.yml/badge.svg)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/python-publish.yml)
+
+
 ![GitHub last commit](https://img.shields.io/github/last-commit/heitorpolidoro/github_actions_utils)
 [![Latest](https://img.shields.io/github/release/heitorpolidoro/github_actions_utils.svg?label=latest)](https://github.com/heitorpolidoro/github_actions_utils/releases/latest)
 ![GitHub Release Date](https://img.shields.io/github/release-date/heitorpolidoro/github_actions_utils)
-
-![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/heitorpolidoro/github_actions_utils/latest)
 ![GitHub top language](https://img.shields.io/github/languages/top/heitorpolidoro/github_actions_utils)
 
-![GitHub issues](https://img.shields.io/github/issues/heitorpolidoro/github_actions_utils)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/heitorpolidoro/github_actions_utils)
-![GitHub Discussions](https://img.shields.io/github/discussions/heitorpolidoro/github_actions_utils)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/heitorpolidoro/github_actions_utils)
-![GitHub repo file count (file extension)](https://img.shields.io/github/directory-file-count/heitorpolidoro/github_actions_utils/github_actions_utils)
+<!--
+![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/heitorpolidoro/github_actions_utils/latest)
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/heitorpolidoro/github_actions_utils)
+-->
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/heitorpolidoro/github_actions_utils)
 ![GitHub watchers](https://img.shields.io/github/watchers/heitorpolidoro/github_actions_utils)
+![GitHub issues](https://img.shields.io/github/issues/heitorpolidoro/github_actions_utils)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/heitorpolidoro/github_actions_utils)
+![GitHub Discussions](https://img.shields.io/github/discussions/heitorpolidoro/github_actions_utils)
+
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/heitorpolidoro/github_actions_utils)
+![GitHub repo file count (file extension)](https://img.shields.io/github/directory-file-count/heitorpolidoro/github_actions_utils/github_actions_utils)
 ![GitHub contributors](https://img.shields.io/github/contributors-anon/heitorpolidoro/github_actions_utils)
 
-![GitHub all releases](https://img.shields.io/github/downloads/heitorpolidoro/github_actions_utils/total)
 <!--
-![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/heitorpolidoro/github_actions_utils)
+![GitHub all releases](https://img.shields.io/github/downloads/heitorpolidoro/github_actions_utils/total)
 -->
 ---
 
@@ -39,19 +47,7 @@
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/github_actions_utils)
 -->
 
-
-
 ---
-
-
-[![CI/CD](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml/badge.svg)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml)
-[![Code Quality](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml/badge.svg?event=issues)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml)
-[![Code Quality](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml/badge.svg?event=pull_request)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/ci_cd.yml)
-
-[![CI/CD](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/release.yml/badge.svg)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/release.yml)
-[![Code Quality](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/release.yml/badge.svg?event=issues)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/release.yml)
-[![Code Quality](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/release.yml/badge.svg?event=pull_request)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/release.yml)
-
 <a href="https://sonarcloud.io/project/overview?id=heitorpolidoro_github_actions_utils" >
   <img src="https://community.finos.org/img/vendors/sonarcloud-logo.png" alt="Sonarcloud" style="height:100px;">
 </a>
