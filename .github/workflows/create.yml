@@ -6,3 +6,5 @@ on:
 jobs:
   create:
     uses: heitorpolidoro/workflows/.github/workflows/create-pr.yml@master
+    with:
+      heitorpolidoro: ${{ secrets.HEITORPOLIDORO_PAT }}
