@@ -6,7 +6,10 @@ from typing import Callable, Any
 
 
 def log_group(group_name: str, summary_echo: bool = False, summary_check: Callable[[Any], bool] = None) -> Callable:
-    assert summary_echo is False or summary_check is not None, "must provide summary_check if summary_echo is true"
+    if summary_check is None:
+        def default_summary_check(x): return True
+
+        summary_check = default_summary_check
 
     def wrapper(func: Callable) -> Callable:
         objects_attributes = []
