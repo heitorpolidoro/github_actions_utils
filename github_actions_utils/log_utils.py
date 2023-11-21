@@ -2,10 +2,11 @@ import inspect
 import os
 import re
 from string import Template
+from typing import Callable, Any
 
 
-def github_group(group_name):
-    def wrapper(f):
+def log_group(group_name: str) -> Callable:
+    def wrapper(f: Callable) -> Callable:
         objects_attributes = []
         for var in re.findall(r"\$\([\w.]+\)", group_name):
             attribute = re.sub(r"\$\(([\w.]+)\)", "\\1", var)
@@ -44,11 +45,27 @@ def github_group(group_name):
     return wrapper
 
 
-def summary(text, overwrite=False):
+def summary(text: str, overwrite: bool = False, end: str = "\n"):
     summary_file_path = os.getenv("GITHUB_STEP_SUMMARY")
 
     # Open the file in append mode
     mode = "w" if overwrite else "a"
     with open(summary_file_path, mode) as f:
         # Write to the file
-        f.write(f"{text}\n")
+        f.write(f"{text}{end}")
+
+
+def summary_exec(action: str, check: Callable[[Any], bool]):
+    def wrapper(f):
+        def inner_wrapper(*args, **kwargs):
+            summary(f"{action}...", end="")
+            resp = f(*args, **kwargs)
+            if check(resp):
+                summary(":white_check_mark:")
+            else:
+                summary(":x:")
+            return resp
+
+        return inner_wrapper
+
+    return wrapper
