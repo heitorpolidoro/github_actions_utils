@@ -5,18 +5,19 @@ from string import Template
 from typing import Callable, Any
 
 
-def log_group(group_name: str, summary_echo: bool = False, summary_check: Callable[[Any], bool] = None) -> Callable:
-    if summary_check is None:
-        def default_summary_check(x): return True
+def default_summary_check(*_args):
+    return True
 
-        summary_check = default_summary_check
+
+def log_group(group_name: str, summary_echo: bool = False, summary_check: Callable[[Any], bool] = None) -> Callable:
+    summary_check = summary_check or default_summary_check
+
+    objects_attributes = []
+    for var in re.findall(r"\$\([\w.]+\)", group_name):
+        attribute = re.sub(r"\$\(([\w.]+)\)", "\\1", var)
+        objects_attributes.append(attribute)
 
     def wrapper(func: Callable) -> Callable:
-        objects_attributes = []
-        for var in re.findall(r"\$\([\w.]+\)", group_name):
-            attribute = re.sub(r"\$\(([\w.]+)\)", "\\1", var)
-            # attribute_template = attribute.replace(".", "_")
-            objects_attributes.append(attribute)
 
         def inner_wrapper(*args, **kwargs):
             inner_group_name = group_name
