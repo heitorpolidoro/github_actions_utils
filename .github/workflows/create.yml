@@ -4,7 +4,7 @@ on:
   create:
 
 jobs:
-  create-PR:
+  create:
     uses: heitorpolidoro/workflows/.github/workflows/create-pr.yml@master
     with:
-      heitorpolidoro: ${{ secrets.HEITORPOLIDORO_PAT }}
+      heitorpolidoro: "batata"
