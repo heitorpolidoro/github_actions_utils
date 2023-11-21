@@ -5,8 +5,10 @@ from string import Template
 from typing import Callable, Any
 
 
-def log_group(group_name: str) -> Callable:
-    def wrapper(f: Callable) -> Callable:
+def log_group(group_name: str, summary_echo: bool = False, summary_check: Callable[[Any], bool] = None) -> Callable:
+    assert summary_echo is False or summary_check is not None, "must provide summary_check if summary_echo is true"
+
+    def wrapper(func: Callable) -> Callable:
         objects_attributes = []
         for var in re.findall(r"\$\([\w.]+\)", group_name):
             attribute = re.sub(r"\$\(([\w.]+)\)", "\\1", var)
@@ -16,7 +18,7 @@ def log_group(group_name: str) -> Callable:
         def inner_wrapper(*args, **kwargs):
             inner_group_name = group_name
             template_dict = kwargs.copy()
-            for index, name in enumerate(inspect.signature(f).parameters):
+            for index, name in enumerate(inspect.signature(func).parameters):
                 if index < len(args):
                     template_dict[name] = args[index]
 
@@ -33,9 +35,12 @@ def log_group(group_name: str) -> Callable:
                     rf"\$\({attribute}\)", f"${attribute_template}", inner_group_name
                 )
 
-            print(
-                f"::group::{Template(inner_group_name).safe_substitute(**template_dict)}"
-            )
+            text = Template(inner_group_name).safe_substitute(**template_dict)
+            print(f"::group::{text}")
+            if summary_echo:
+                f = summary_exec(text, summary_check)(func)
+            else:
+                f = func
             resp = f(*args, **kwargs)
             print("::endgroup::")
             return resp
@@ -59,12 +64,17 @@ def summary_exec(action: str, check: Callable[[Any], bool]):
     def wrapper(f):
         def inner_wrapper(*args, **kwargs):
             summary(f"{action}...", end="")
-            resp = f(*args, **kwargs)
-            if check(resp):
-                summary(":white_check_mark:")
-            else:
+            try:
+                resp = f(*args, **kwargs)
+                if check(resp):
+                    summary(":white_check_mark:")
+                else:
+                    summary(":x:")
+                return resp
+            except Exception as e:
                 summary(":x:")
-            return resp
+                summary(str(e))
+                raise
 
         return inner_wrapper
 
