@@ -24,3 +24,7 @@ dynamic = ["version"]
 
 [tool.setuptools.dynamic]
 version = {attr = "github_actions_utils.__version__"}
+
+[tool.coverage.run]
+source = ["."]
+omit = ["tests/*"]
