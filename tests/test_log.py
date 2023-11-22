@@ -162,7 +162,7 @@ def test_summary_exec_fail_exception():
 
     with patch("github_actions_utils.log.summary") as summary_mock:
         with pytest.raises(Exception):
-            resp = _success()
+            _success()
     summary_mock.assert_has_calls(
         [
             call("Test success...", end=""),
