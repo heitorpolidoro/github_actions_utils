@@ -2,7 +2,7 @@ import tempfile
 
 import pytest
 
-from github_actions_utils.log_utils import log_group, summary, summary_exec
+from github_actions_utils.log import github_log_group, summary, summary_exec
 
 from unittest.mock import patch, call
 
@@ -14,8 +14,8 @@ def github_step_summary(monkeypatch):
         yield temp.name
 
 
-def test_github_group_simple(capsys):
-    @log_group("simple")
+def test_github_log_group_simple(capsys):
+    @github_log_group("simple")
     def simple():
         print("Hello, world!")
 
@@ -25,8 +25,8 @@ def test_github_group_simple(capsys):
     assert err == ""
 
 
-def test_github_group_using_parameter_value(capsys):
-    @log_group("$parameter_value")
+def test_github_log_group_using_parameter_value(capsys):
+    @github_log_group("$parameter_value")
     def using_parameter_value(parameter_value):
         print(parameter_value)
 
@@ -36,25 +36,25 @@ def test_github_group_using_parameter_value(capsys):
     assert err == ""
 
 
-def test_github_group_using_parameter_value_with_multiple_parameters(capsys):
-    @log_group("$parameter_value1 $parameter_value2")
+def test_github_log_group_using_parameter_value_with_multiple_parameters(capsys):
+    @github_log_group("$parameter_value2 $parameter_value1 $kwarg2 $kwarg1")
     def using_parameter_value_with_multiple_parameters(
-            parameter_value1, parameter_value2
+            parameter_value1, parameter_value2, kwarg1="default_kwarg", kwarg2="default_kwarg2"
     ):
-        print(parameter_value1, parameter_value2)
+        print("inside the group")
 
-    using_parameter_value_with_multiple_parameters("Hello,", "world!")
+    using_parameter_value_with_multiple_parameters("Hello,", "world!", kwarg2="KWARG2")
     out, err = capsys.readouterr()
-    assert out == "::group::Hello, world!\nHello, world!\n::endgroup::\n"
+    assert out == "::group::world! Hello, KWARG2 default_kwarg\ninside the group\n::endgroup::\n"
     assert err == ""
 
 
-def test_github_group_using_object_attributes(capsys):
+def test_github_log_group_using_object_attributes(capsys):
     class TestObject:
         def __init__(self):
             self.attribute = "Hello, world!"
 
-    @log_group("$(obj.attribute)")
+    @github_log_group("$(obj.attribute)")
     def using_object_attributes(obj):
         print(obj.attribute)
 
@@ -96,7 +96,7 @@ def test_summary_exec_success():
     def _success():
         return True
 
-    with patch("github_actions_utils.log_utils.summary") as summary_mock:
+    with patch("github_actions_utils.log.summary") as summary_mock:
         resp = _success()
     assert resp is True
     summary_mock.assert_has_calls(
@@ -112,12 +112,61 @@ def test_summary_exec_fail():
     def _success():
         return False
 
-    with patch("github_actions_utils.log_utils.summary") as summary_mock:
+    with patch("github_actions_utils.log.summary") as summary_mock:
         resp = _success()
     assert resp is False
     summary_mock.assert_has_calls(
         [
             call("Test success...", end=""),
             call(":x:", ),
+        ]
+    )
+
+
+def test_summary_exec_without_check_true():
+    @summary_exec("Test success")
+    def _success():
+        return True
+
+    with patch("github_actions_utils.log.summary") as summary_mock:
+        resp = _success()
+    assert resp is True
+    summary_mock.assert_has_calls(
+        [
+            call("Test success...", end=""),
+            call(":white_check_mark:", ),
+        ]
+    )
+
+
+def test_summary_exec_without_check_false():
+    @summary_exec("Test success", False)
+    def _success():
+        return True
+
+    with patch("github_actions_utils.log.summary") as summary_mock:
+        resp = _success()
+    assert resp is True
+    summary_mock.assert_has_calls(
+        [
+            call("Test success...", end=""),
+            call(":x:", ),
+        ]
+    )
+
+
+def test_summary_exec_fail_exception():
+    @summary_exec("Test success", lambda r: r)
+    def _success():
+        raise Exception("error")
+
+    with patch("github_actions_utils.log.summary") as summary_mock:
+        with pytest.raises(Exception):
+            _success()
+    summary_mock.assert_has_calls(
+        [
+            call("Test success...", end=""),
+            call(":x:"),
+            call("error"),
         ]
     )
