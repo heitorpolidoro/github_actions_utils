@@ -6,7 +6,6 @@ on:
 
 jobs:
   create:
-    if: "!contains(github.ref, 'refs/tags/')"
     uses: heitorpolidoro/workflows/.github/workflows/create-pr.yml@master
     secrets:
       heitorpolidoro: ${{ secrets.HEITORPOLIDORO_PAT }}
