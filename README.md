@@ -10,7 +10,6 @@
 [![Release](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/release.yml/badge.svg)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/release.yml)
 [![Upload Python Package](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/python-publish.yml/badge.svg)](https://github.com/heitorpolidoro/github_actions_utils/actions/workflows/python-publish.yml)
 
-
 ![GitHub last commit](https://img.shields.io/github/last-commit/heitorpolidoro/github_actions_utils)
 [![Latest](https://img.shields.io/github/release/heitorpolidoro/github_actions_utils.svg?label=latest)](https://github.com/heitorpolidoro/github_actions_utils/releases/latest)
 ![GitHub Release Date](https://img.shields.io/github/release-date/heitorpolidoro/github_actions_utils)
