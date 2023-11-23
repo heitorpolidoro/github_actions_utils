@@ -3,7 +3,6 @@ name: Create Pull Request
 on:
   create:
 
-
 jobs:
   create:
     uses: heitorpolidoro/workflows/.github/workflows/create-pr.yml@master

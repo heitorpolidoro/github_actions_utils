@@ -2,7 +2,7 @@ from unittest.mock import Mock
 
 import pytest
 
-from github_actions_utils.git import get_gh_repo, extract_owner_and_repo_name, get_commit_message_command
+from github_actions_utils.git import get_gh_repo, _extract_owner_and_repo_name, get_commit_message_command
 
 COMMIT_COMMAND_PREFIX = "command"
 
@@ -51,7 +51,7 @@ def test_get_gh_repo_token(monkeypatch):
 
 
 def test_extract_owner_and_repo_name_with_dot_git():
-    owner, repo_name = extract_owner_and_repo_name(
+    owner, repo_name = _extract_owner_and_repo_name(
         "https://github.com/heitorpolidoro/github_actions_utils.git"
     )
     assert repo_name == "github_actions_utils"
@@ -59,7 +59,7 @@ def test_extract_owner_and_repo_name_with_dot_git():
 
 
 def test_extract_owner_and_repo_name_without_dot_git():
-    owner, repo_name = extract_owner_and_repo_name(
+    owner, repo_name = _extract_owner_and_repo_name(
         "https://github.com/heitorpolidoro/github_actions_utils"
     )
     assert repo_name == "github_actions_utils"

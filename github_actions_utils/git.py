@@ -9,6 +9,19 @@ from github.Auth import Token
 from github.Repository import Repository
 
 
+def _extract_owner_and_repo_name(remote_url: str) -> Tuple[str, str]:
+    """
+    Extract the owner and repository name from the URL
+    :param remote_url: The url to extract the owner and the repo name
+    :return: A tuple with the owner and the repo name
+    """
+    owner, repo_name = remote_url.split("/")[-2:]
+    # Remove '.git' from the repo_name if it's there
+    if repo_name.endswith(".git"):
+        repo_name = repo_name[:-4]
+    return owner, repo_name
+
+
 @lru_cache
 def get_gh_repo(token: str = None) -> Repository:
     """
@@ -25,22 +38,9 @@ def get_gh_repo(token: str = None) -> Repository:
     # Get the URL of the 'origin' remote
     remote_url = repo.remotes.origin.url
 
-    owner, repo_name = extract_owner_and_repo_name(remote_url)
+    owner, repo_name = _extract_owner_and_repo_name(remote_url)
 
     return gh.get_repo(f"{owner}/{repo_name}")
-
-
-def extract_owner_and_repo_name(remote_url: str) -> Tuple[str, str]:
-    """
-    Extract the owner and repository name from the URL
-    :param remote_url: The url to extract the owner and the repo name
-    :return: A tuple with the owner and the repo name
-    """
-    owner, repo_name = remote_url.split("/")[-2:]
-    # Remove '.git' from the repo_name if it's there
-    if repo_name.endswith(".git"):
-        repo_name = repo_name[:-4]
-    return owner, repo_name
 
 
 def get_commit_message_command(repo: Repository, command_prefix: str) -> str | None:
