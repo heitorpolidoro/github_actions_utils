@@ -18,5 +18,8 @@ jobs:
       - name: Running Auto Release
         id: release
         uses: heitorpolidoro/auto-release@master
+        with:
+          version_location: "github_actions_utils.__init__.py"
+          version_regex: "__version__ = \"$version\""
         env:
           GITHUB_TOKEN: ${{ secrets.HEITORPOLIDORO_PAT }}
