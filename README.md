@@ -37,6 +37,8 @@
 <!--
 ![GitHub all releases](https://img.shields.io/github/downloads/heitorpolidoro/github_actions_utils/total)
 -->
+<!--
+
 ---
 
 <a href="https://pypi.org/project/github-actions-utils/" >
@@ -46,6 +48,7 @@
 ![PyPI - Status](https://img.shields.io/pypi/status/github_actions_utils)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/github_actions_utils)
 ![PyPI - Version](https://img.shields.io/pypi/v/github_actions_utils)
+-->
 <!-- # TODO pip cache
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/github_actions_utils)
 -->
