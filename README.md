@@ -28,9 +28,11 @@
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/heitorpolidoro/github_actions_utils)
 ![GitHub Discussions](https://img.shields.io/github/discussions/heitorpolidoro/github_actions_utils)
 
+<!--
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/heitorpolidoro/github_actions_utils)
 ![GitHub repo file count (file extension)](https://img.shields.io/github/directory-file-count/heitorpolidoro/github_actions_utils/github_actions_utils)
 ![GitHub contributors](https://img.shields.io/github/contributors-anon/heitorpolidoro/github_actions_utils)
+-->
 
 <!--
 ![GitHub all releases](https://img.shields.io/github/downloads/heitorpolidoro/github_actions_utils/total)
