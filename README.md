@@ -20,8 +20,10 @@
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/heitorpolidoro/github_actions_utils)
 -->
 
+<!--
 ![GitHub Repo stars](https://img.shields.io/github/stars/heitorpolidoro/github_actions_utils)
 ![GitHub watchers](https://img.shields.io/github/watchers/heitorpolidoro/github_actions_utils)
+-->
 ![GitHub issues](https://img.shields.io/github/issues/heitorpolidoro/github_actions_utils)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/heitorpolidoro/github_actions_utils)
 ![GitHub Discussions](https://img.shields.io/github/discussions/heitorpolidoro/github_actions_utils)
