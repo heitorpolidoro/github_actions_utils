@@ -62,7 +62,9 @@ def github_log_group(group_name: str) -> Callable:
 
     def wrapper(func: Callable) -> Callable:
         def inner_wrapper(*args, **kwargs):
-            template_dict = generate_template_dict(objects_attributes, func, args, kwargs)
+            template_dict = generate_template_dict(
+                objects_attributes, func, args, kwargs
+            )
             inner_group_name = fix_objects_identifiers(group_name, objects_attributes)
 
             text = Template(inner_group_name).safe_substitute(**template_dict)

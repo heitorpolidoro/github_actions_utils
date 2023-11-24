@@ -1,26 +1,10 @@
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 import pytest
 
-from github_actions_utils.git import get_gh_repo, _extract_owner_and_repo_name, get_commit_message_command
+from github_actions_utils.github import get_github, _extract_owner_and_repo_name, get_commit_message_command
 
 COMMIT_COMMAND_PREFIX = "command"
-
-
-@pytest.fixture(scope="module")
-def vcr_cassette_name(request):
-    return "get_repo.yaml"
-
-
-@pytest.fixture(autouse=True)
-def clear_lru_cache():
-    yield
-    get_gh_repo.cache_clear()
-
-
-@pytest.fixture
-def repo():
-    yield get_gh_repo()
 
 
 @pytest.fixture
@@ -36,18 +20,26 @@ def mock_commit_message(repo, commit_message):
     commit.commit.message = commit_message
 
 
-@pytest.mark.vcr
-def test_get_gh_repo(repo):
-    assert repo.name == "github_actions_utils"
-    assert repo.owner.login == "heitorpolidoro"
+@pytest.fixture
+def gh_mock():
+    with patch("github.Github") as gh:
+        yield gh
 
 
 @pytest.mark.vcr
-def test_get_gh_repo_token(monkeypatch):
-    monkeypatch.setenv("GITHUB_TOKEN", "github_token")
-    repo = get_gh_repo()
+def test_get_github_without_token():
+    assert get_github().get_user().login == "heitorpolidoro"
+
+
+@pytest.mark.vcr
+def test_get_github_with_token():
+    assert get_github("token").get_user().login == "heitorpolidoro"
+
+
+@pytest.mark.vcr
+def test_get_current_repo():
+    repo = get_github().get_current_repo()
     assert repo.name == "github_actions_utils"
-    assert repo.owner.login == "heitorpolidoro"
 
 
 def test_extract_owner_and_repo_name_with_dot_git():

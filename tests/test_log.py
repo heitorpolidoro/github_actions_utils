@@ -39,13 +39,19 @@ def test_github_log_group_using_parameter_value(capsys):
 def test_github_log_group_using_parameter_value_with_multiple_parameters(capsys):
     @github_log_group("$parameter_value2 $parameter_value1 $kwarg2 $kwarg1")
     def using_parameter_value_with_multiple_parameters(
-            parameter_value1, parameter_value2, kwarg1="default_kwarg", kwarg2="default_kwarg2"
+        parameter_value1,
+        parameter_value2,
+        kwarg1="default_kwarg",
+        kwarg2="default_kwarg2",
     ):
         print("inside the group")
 
     using_parameter_value_with_multiple_parameters("Hello,", "world!", kwarg2="KWARG2")
     out, err = capsys.readouterr()
-    assert out == "::group::world! Hello, KWARG2 default_kwarg\ninside the group\n::endgroup::\n"
+    assert (
+        out
+        == "::group::world! Hello, KWARG2 default_kwarg\ninside the group\n::endgroup::\n"
+    )
     assert err == ""
 
 
@@ -102,7 +108,9 @@ def test_summary_exec_success():
     summary_mock.assert_has_calls(
         [
             call("Test success...", end=""),
-            call(":white_check_mark:", ),
+            call(
+                ":white_check_mark:",
+            ),
         ]
     )
 
@@ -118,7 +126,9 @@ def test_summary_exec_fail():
     summary_mock.assert_has_calls(
         [
             call("Test success...", end=""),
-            call(":x:", ),
+            call(
+                ":x:",
+            ),
         ]
     )
 
@@ -134,7 +144,9 @@ def test_summary_exec_without_check_true():
     summary_mock.assert_has_calls(
         [
             call("Test success...", end=""),
-            call(":white_check_mark:", ),
+            call(
+                ":white_check_mark:",
+            ),
         ]
     )
 
@@ -150,7 +162,9 @@ def test_summary_exec_without_check_false():
     summary_mock.assert_has_calls(
         [
             call("Test success...", end=""),
-            call(":x:", ),
+            call(
+                ":x:",
+            ),
         ]
     )
 

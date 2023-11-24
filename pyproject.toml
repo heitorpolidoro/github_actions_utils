@@ -9,7 +9,7 @@ authors = [
 ]
 description = "Package of useful functions for GitHub Actions."
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 keywords = ["github", "actions", "utils"]
 license = { text = "MIT" }
 classifiers = [
@@ -17,13 +17,14 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-dynamic = ["version"]
+dynamic = ["version", "dependencies"]
 
 [project.urls]
 "Homepage" = "https://github.com/heitorpolidoro/github_actions_utils"
 
 [tool.setuptools.dynamic]
 version = {attr = "github_actions_utils.__version__"}
+dependencies = {file = ["requirements.txt"]}
 
 [tool.coverage.run]
 source = ["."]

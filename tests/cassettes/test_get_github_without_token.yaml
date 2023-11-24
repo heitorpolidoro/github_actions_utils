@@ -1,0 +1,84 @@
+interactions:
+  - request:
+      body: null
+      headers:
+        Accept:
+          - '*/*'
+        Accept-Encoding:
+          - gzip, deflate
+        Authorization:
+          - token user_token
+        Connection:
+          - keep-alive
+        User-Agent:
+          - PyGithub/Python
+      method: GET
+      uri: https://api.github.com/user
+    response:
+      body:
+        string: "{\"login\":\"heitorpolidoro\"}"
+      headers:
+        Access-Control-Allow-Origin:
+          - '*'
+        Access-Control-Expose-Headers:
+          - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+            X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+            X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+            X-GitHub-Request-Id, Deprecation, Sunset
+        Cache-Control:
+          - private, max-age=60, s-maxage=60
+        Content-Encoding:
+          - gzip
+        Content-Security-Policy:
+          - default-src 'none'
+        Content-Type:
+          - application/json; charset=utf-8
+        Date:
+          - Fri, 24 Nov 2023 21:52:46 GMT
+        ETag:
+          - W/"7858a67990a4449d83ffe2427a4d75ca020c33b3bc26a0a4affbf6284437e4c0"
+        Last-Modified:
+          - Wed, 22 Nov 2023 12:30:42 GMT
+        Referrer-Policy:
+          - origin-when-cross-origin, strict-origin-when-cross-origin
+        Server:
+          - GitHub.com
+        Strict-Transport-Security:
+          - max-age=31536000; includeSubdomains; preload
+        Transfer-Encoding:
+          - chunked
+        Vary:
+          - Accept, Authorization, Cookie, X-GitHub-OTP
+          - Accept-Encoding, Accept, X-Requested-With
+        X-Accepted-OAuth-Scopes:
+          - ''
+        X-Content-Type-Options:
+          - nosniff
+        X-Frame-Options:
+          - deny
+        X-GitHub-Media-Type:
+          - github.v3; format=json
+        X-GitHub-Request-Id:
+          - EFD2:A98C5:1BFF159:1E10F75:65611B2E
+        X-OAuth-Scopes:
+          - gist, read:org, repo, workflow
+        X-RateLimit-Limit:
+          - '5000'
+        X-RateLimit-Remaining:
+          - '3892'
+        X-RateLimit-Reset:
+          - '1700863405'
+        X-RateLimit-Resource:
+          - core
+        X-RateLimit-Used:
+          - '1108'
+        X-XSS-Protection:
+          - '0'
+        x-github-api-version-selected:
+          - '2022-11-28'
+        x-oauth-client-id:
+          - 178c6fc778ccc68e1d6a
+      status:
+        code: 200
+        message: OK
+version: 1

@@ -1,0 +1,77 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - PyGithub/Python
+    method: GET
+    uri: https://api.github.com/repos/heitorpolidoro/github_actions_utils
+  response:
+    body:
+      string: '{"name":"github_actions_utils"}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1315'
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 24 Nov 2023 22:08:29 GMT
+      ETag:
+      - W/"c0fa3d2e8a650b41391f4b1812b06d70053a377893c7b09c653cc1c2c2bf924a"
+      Last-Modified:
+      - Tue, 12 Sep 2023 19:23:53 GMT
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - GitHub.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Vary:
+      - Accept, Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - F44C:A5D4C:1CD832E:1EF141F:65611EDD
+      X-RateLimit-Limit:
+      - '60'
+      X-RateLimit-Remaining:
+      - '47'
+      X-RateLimit-Reset:
+      - '1700864104'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '13'
+      X-XSS-Protection:
+      - '0'
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+version: 1

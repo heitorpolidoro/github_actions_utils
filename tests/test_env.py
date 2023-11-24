@@ -1,4 +1,10 @@
-from github_actions_utils.env import get_env, get_github_env, github_envs, get_input, inputs
+from github_actions_utils.env import (
+    get_env,
+    get_github_env,
+    github_envs,
+    get_input,
+    inputs,
+)
 
 
 def test_get_env(monkeypatch):
