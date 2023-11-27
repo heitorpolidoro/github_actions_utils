@@ -4,6 +4,8 @@ import re
 from string import Template
 from typing import Callable, Any, List
 
+from github_actions_utils.env import github_envs
+
 
 def extract_attributes(group_name: str) -> List[str]:
     objects_attributes = []
@@ -46,7 +48,7 @@ def fix_objects_identifiers(group_name, objects_attributes):
 
 
 def summary(text: str, overwrite: bool = False, end: str = "\n"):
-    summary_file_path = os.getenv("GITHUB_STEP_SUMMARY")
+    summary_file_path = github_envs.step_summary
 
     # Open the file in append mode
     mode = "w" if overwrite else "a"

@@ -13,10 +13,10 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/heitorpolidoro/github_actions_utils)
 [![Latest](https://img.shields.io/github/release/heitorpolidoro/github_actions_utils.svg?label=latest)](https://github.com/heitorpolidoro/github_actions_utils/releases/latest)
 ![GitHub Release Date](https://img.shields.io/github/release-date/heitorpolidoro/github_actions_utils)
-![GitHub top language](https://img.shields.io/github/languages/top/heitorpolidoro/github_actions_utils)
+![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/heitorpolidoro/github_actions_utils/latest)
 
 <!--
-![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/heitorpolidoro/github_actions_utils/latest)
+![GitHub top language](https://img.shields.io/github/languages/top/heitorpolidoro/github_actions_utils)
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/heitorpolidoro/github_actions_utils)
 -->
 
