@@ -2,7 +2,7 @@ from unittest.mock import patch
 
 import pytest
 
-from github_actions_utils.log import debug, notice
+from github_actions_utils.log import debug, notice, warning, error
 
 
 @pytest.fixture(autouse=True)
@@ -19,6 +19,16 @@ def test_debug(mock_print):
 def test_notice(mock_print):
     notice("test", file="file", line=1, end_line=2)
     mock_print.assert_called_with("::notice file=file,line=1,endLine=2::test")
+
+
+def test_warning(mock_print):
+    warning("test", file="file", line=1, end_line=2)
+    mock_print.assert_called_with("::warning file=file,line=1,endLine=2::test")
+
+
+def test_error(mock_print):
+    error("test", file="file", line=1, end_line=2)
+    mock_print.assert_called_with("::error file=file,line=1,endLine=2::test")
 # import tempfile
 #
 # import pytest
