@@ -1,12 +1,14 @@
-import sys
-sys.path.append('.')
-from github_actions_utils.log import debug, notice
+from github_actions_utils.log import debug, notice, warning, error
+
+file = "tests/visual_tests.py"
 
 debug("This is a debug")
-notice("This is just a notice")
-notice("This is a notice with title and file", title="Nice Title", file="log.py")
-notice("This is a notice with line", line=2)
-notice("This is a notice with line and endLine", line=2, end_line=4)
-notice("This is a notice with col", line=1, col=2)
-notice("This is a notice with col and endCol", line=4, end_line=5)
-notice("This is a notice with col and endCol", line=4, col=2, end_col=5)
+
+notice("This is a notice")
+notice("This is a file notice with title", title="Nice Title", file=file)
+
+warning("This is a warning")
+warning("This is a file warning with title", title="Nice Title", file=file)
+
+error("This is a error")
+error("This is a file error with title", title="Nice Title", file=file)
