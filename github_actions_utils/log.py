@@ -67,7 +67,6 @@ def group(name: str):
         yield
     finally:
         end_group()
-# from string import Template
 # from typing import Callable, Any, List
 #
 # from github_actions_utils.env import github_envs
