@@ -24,3 +24,7 @@ jobs:
 
       - name: Test Commands
         run: python tests/visual_tests.py
+
+      - name: Test Commands
+        run: echo "::warning file=tests/visual_tests.py,line=1,col=5,endColumn=7::Missing semicolon"
+
