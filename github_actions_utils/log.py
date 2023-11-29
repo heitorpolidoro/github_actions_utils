@@ -1,11 +1,12 @@
 import re
+from contextlib import contextmanager
 
 
 def to_pascal_case(snake_str):
     return re.sub(r'_([a-z])', lambda x: x.group(1).upper(), snake_str)
 
 
-def print_command(command: str, message: str, **command_params):
+def print_command(command: str, message: str = "", **command_params):
     command_params_str = ",".join(
         f"{to_pascal_case(key)}={value}" for key, value in command_params.items() if value is not None)
     print(f"::{command} {command_params_str}::{message}")
@@ -49,9 +50,23 @@ def error(
         end_line: int = None,
 ) -> None:
     print_command("error", **locals())
-# from string import Template
-# from typing import Callable, Any, List
-#
+
+
+def start_group(name: str) -> None:
+    print_command("group", name)
+
+
+def end_group() -> None:
+    print_command("endgroup")
+
+
+@contextmanager
+def group(name: str):
+    start_group(name)
+    try:
+        yield
+    finally:
+        end_group()
 # from github_actions_utils.env import github_envs
 #
 #
