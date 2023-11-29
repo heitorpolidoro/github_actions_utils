@@ -24,7 +24,7 @@ dynamic = ["version", "dependencies"]
 
 [tool.setuptools.dynamic]
 version = {attr = "github_actions_utils.__version__"}
-dependencies = {file = ["requirements.txt"]}
+#dependencies = {file = ["requirements.txt"]}  TODO uncomment when PyGithub release https://github.com/PyGithub/PyGithub/pull/2816
 
 [tool.coverage.run]
 source = ["."]
