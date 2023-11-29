@@ -20,7 +20,7 @@ def notice(
         title: str = None,
         file: str = None,
         col: int = None,
-        end_col: int = None,
+        end_column: int = None,
         line: int = None,
         end_line: int = None,
 ) -> None:
@@ -32,7 +32,7 @@ def warning(
         title: str = None,
         file: str = None,
         col: int = None,
-        end_col: int = None,
+        end_column: int = None,
         line: int = None,
         end_line: int = None,
 ) -> None:
@@ -44,7 +44,7 @@ def error(
         title: str = None,
         file: str = None,
         col: int = None,
-        end_col: int = None,
+        end_column: int = None,
         line: int = None,
         end_line: int = None,
 ) -> None:

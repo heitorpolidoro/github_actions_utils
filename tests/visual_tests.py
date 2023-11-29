@@ -18,7 +18,7 @@ notice(
     file=file
 )
 notice("This is a notice with col", line=notice_start_line + 10, col=2, file=file)
-notice("This is a notice with col and endCol", line=notice_start_line + 21, col=2, end_col=5, file=file)
+notice("This is a notice with col and endCol", line=notice_start_line + 21, col=2, end_column=5, file=file)
 
 warning_start_line = 23
 warning("This is just a warning")
@@ -31,7 +31,7 @@ warning(
     file=file
 )
 warning("This is a warning with col", line=warning_start_line + 10, col=2, file=file)
-warning("This is a warning with col and endCol", line=warning_start_line + 21, col=2, end_col=5, file=file)
+warning("This is a warning with col and endCol", line=warning_start_line + 21, col=2, end_column=5, file=file)
 
 error_start_line = 36
 error("This is just a error")
@@ -44,4 +44,4 @@ error(
     file=file
 )
 error("This is a error with col", line=error_start_line + 10, col=2, file=file)
-error("This is a error with col and endCol", line=error_start_line + 21, col=2, end_col=5, file=file)
+error("This is a error with col and endCol", line=error_start_line + 21, col=2, end_column=5, file=file)
