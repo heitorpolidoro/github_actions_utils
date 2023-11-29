@@ -25,3 +25,6 @@ jobs:
       - name: Test Commands
         run: python tests/visual_tests.py
 
+      - name: Test Commands2
+        run: echo "::notice file=github_actions_utils/log.py,line=1,col=5,endColumn=7::Missing semicolon"
+
