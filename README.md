@@ -65,7 +65,6 @@ mask("This is a mask")
 print("Test This is a mask")
 ```
 ![Mask](images/mask.png)
-
 [//]: # (### Log Utils)
 
 [//]: # (#### github group decorator)
