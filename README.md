@@ -12,7 +12,8 @@ Github Actions Utils is a Python library to help creating actions
 
 ---
 ### Log utils
-Usage:
+
+Messages:
 ```python
 from github_actions_utils.log import debug, notice, warning, error
 
@@ -37,7 +38,21 @@ In the Action summary:<br>
 In the Files changes when a file is passed as a parameter:<br>
 ![In file](images/in_file.png)
 
+Group:
+```python
+from github_actions_utils.log import start_group, end_group
 
+start_group("Group title")
+print("logs inside group")
+end_group()
+
+# OR
+from github_actions_utils.log import group
+
+with group("Group title"):
+    print("logs inside group")
+```
+![Group](images/group.png)
 [//]: # (### Log Utils)
 
 [//]: # (#### github group decorator)

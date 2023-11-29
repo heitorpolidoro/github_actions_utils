@@ -2,7 +2,7 @@ from unittest.mock import patch, call
 
 import pytest
 
-from github_actions_utils.log import debug, notice, warning, error, start_group, end_group, group
+from github_actions_utils.log import debug, notice, warning, error, start_group, end_group, group, mask
 
 
 @pytest.fixture(autouse=True)
@@ -52,6 +52,11 @@ def test_group_context_exception(mock_print):
         with group("test"):
             raise Exception("test")
     mock_print.assert_has_calls([call("::group ::test"), call("::endgroup ::")])
+
+
+def test_mask(mock_print):
+    mask("test")
+    mock_print.assert_called_with("::mask ::test")
 # import tempfile
 #
 # import pytest
