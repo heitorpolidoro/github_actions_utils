@@ -7,6 +7,9 @@
 ![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/heitorpolidoro/github_actions_utils/latest)<br>
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=heitorpolidoro_github_actions_utils&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=heitorpolidoro_github_actions_utils)<br>
 ![GitHub](https://img.shields.io/github/license/heitorpolidoro/github_actions_utils)
+
+Github Actions Utils is a Python library to help creating actions
+
 ---
 ### Log utils
 Usage:
