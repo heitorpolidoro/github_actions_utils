@@ -3,7 +3,7 @@ import sys
 sys.path.append('.')
 from github_actions_utils.log import debug, notice, warning, error
 
-file = "github_actions_utils/log.py"
+file = "tests/visual_tests.py"
 
 debug("This is a debug")
 
