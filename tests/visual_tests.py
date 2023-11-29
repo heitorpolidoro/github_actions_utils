@@ -1,4 +1,4 @@
-from github_actions_utils.log import debug, notice, warning, error, group
+from github_actions_utils.log import debug, notice, warning, error, group, mask
 
 file = "tests/visual_tests.py"
 
@@ -15,3 +15,7 @@ error("This is a file error with title", title="Nice Title", file=file)
 
 with group("Group title"):
     print("logs inside group")
+
+
+mask("This is a mask")
+print("Test This is a mask")

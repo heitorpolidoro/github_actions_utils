@@ -67,6 +67,10 @@ def group(name: str):
         yield
     finally:
         end_group()
+
+
+def mask(value: str) -> None:
+    print_command("add-mask", value)
 # from github_actions_utils.env import github_envs
 #
 #
