@@ -18,4 +18,4 @@ with group("Group title"):
 
 
 mask("This is a mask")
-print("This is a mask with title")
+print("Test This is a mask")
