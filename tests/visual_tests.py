@@ -2,6 +2,7 @@ import sys
 sys.path.append('.')
 from github_actions_utils.log import debug, notice
 
+
 debug("This is a debug")
 notice("This is just a notice")
 notice("This is a notice with title and file", title="Nice Title", file="log.py")
