@@ -1,5 +1,3 @@
-from github import Github
-
 from github_actions_utils.log import debug, notice, warning, error, group, mask
 
 file = "tests/visual_tests.py"
@@ -21,6 +19,3 @@ with group("Group title"):
 
 mask("This is a mask")
 print("Test This is a mask")
-
-gh = Github()
-print(gh)
