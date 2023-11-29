@@ -1,3 +1,5 @@
+import sys
+sys.path.append('.')
 from github_actions_utils.log import debug, notice
 
 debug("This is a debug")
