@@ -13,7 +13,10 @@ Github Actions Utils is a Python library to help creating actions
 ---
 ### Log utils
 
-### **`debug(message)`<br>`notice(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`<br>`warning(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`<br>`error(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`**
+### **`debug(message)`**
+### *`notice(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`*
+### `warning(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`
+### `error(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`**
 ```python
 from github_actions_utils.log import debug, notice, warning, error
 
