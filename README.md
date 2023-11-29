@@ -8,6 +8,31 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=heitorpolidoro_github_actions_utils&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=heitorpolidoro_github_actions_utils)<br>
 ![GitHub](https://img.shields.io/github/license/heitorpolidoro/github_actions_utils)
 ---
+### Log utils
+Usage:
+```python
+from github_actions_utils.log import debug, notice, warning, error
+
+debug("This is a debug")
+
+notice("This is a notice")
+notice("This is a file notice with title", title="Nice Title", file=filename)
+
+warning("This is a warning")
+warning("This is a file warning with title", title="Nice Title", file=filename)
+
+error("This is a error")
+error("This is a file error with title", title="Nice Title", file=filename)
+```
+
+In the Action log:<br>
+![Log](images/log.png)
+
+In the Action summary:<br>
+![Annotations](images/annotations.png)
+
+In the Files changes when a file is passed as a parameter:<br>
+![In file](images/in_file.png)
 
 
 [//]: # (### Log Utils)
