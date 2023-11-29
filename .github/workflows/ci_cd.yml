@@ -88,25 +88,25 @@ jobs:
         with:
           linters: flake8
 
-#  auto-merge:
-#    name: Auto Merge
-#    runs-on: ubuntu-latest
-#    if: github.event_name == 'pull_request' && github.actor == 'heitorpolidoro'
-#    needs:
-#      - tests
-#      - linters
-#
-#    steps:
-#      - name: Checkout
-#        uses: actions/checkout@v3
-#
-#      - name: Wait checks to finish
-#        run: gh pr checks --watch --required -i 1 --fail-fast $GITHUB_HEAD_REF
-#        env:
-#          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#
-#      - name: Auto Merge if is my PR
-#        env:
-#          GH_TOKEN: ${{ secrets.HEITORPOLIDORO_PAT }}
-#        run: |
-#            gh pr merge --squash --admin $GITHUB_HEAD_REF
+  auto-merge:
+    name: Auto Merge
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.actor == 'heitorpolidoro'
+    needs:
+      - tests
+      - linters
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Wait checks to finish
+        run: gh pr checks --watch --required -i 1 --fail-fast $GITHUB_HEAD_REF
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Auto Merge if is my PR
+        env:
+          GH_TOKEN: ${{ secrets.HEITORPOLIDORO_PAT }}
+        run: |
+            gh pr merge --squash --admin $GITHUB_HEAD_REF

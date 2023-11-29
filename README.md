@@ -53,6 +53,16 @@ with group("Group title"):
     print("logs inside group")
 ```
 ![Group](images/group.png)
+
+Mask:
+```python
+from github_actions_utils.log import mask
+
+mask("This is a mask")
+print("Test This is a mask")
+```
+![Mask](images/mask.png)
+
 [//]: # (### Log Utils)
 
 [//]: # (#### github group decorator)
