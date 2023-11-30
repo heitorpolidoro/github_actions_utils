@@ -87,7 +87,7 @@ jobs:
           black: true
           workdir: github_actions_utils
   bandit:
-    name: Linters
+    name: bandit
     runs-on: ubuntu-latest
 
     steps:
@@ -99,7 +99,7 @@ jobs:
           bandit: true
           workdir: github_actions_utils
   flake8:
-    name: Linters
+    name: flake8
     runs-on: ubuntu-latest
 
     steps:
@@ -111,7 +111,7 @@ jobs:
           flake8: true
           workdir: github_actions_utils
   pylint:
-    name: Linters
+    name: pylint
     runs-on: ubuntu-latest
 
     steps:
@@ -123,7 +123,7 @@ jobs:
           pylint: true
           workdir: github_actions_utils
   pyright:
-    name: Linters
+    name: pyright
     runs-on: ubuntu-latest
 
     steps:
@@ -135,7 +135,7 @@ jobs:
           pyright: true
           workdir: github_actions_utils
   pytest:
-    name: Linters
+    name: pytest
     runs-on: ubuntu-latest
 
     steps:
