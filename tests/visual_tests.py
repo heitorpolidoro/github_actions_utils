@@ -1,4 +1,12 @@
-from github_actions_utils import debug, notice, warning, error, group, mask, append_summary
+from github_actions_utils import (
+    debug,
+    notice,
+    warning,
+    error,
+    group,
+    mask,
+    append_summary,
+)
 
 file = "tests/visual_tests.py"
 
@@ -22,6 +30,7 @@ print("Test This is a mask")
 
 append_summary("This is a list")
 append_summary("- item 1")
-append_summary("""- item 2
-- item 3""")
-
+append_summary(
+    """- item 2
+- item 3"""
+)
