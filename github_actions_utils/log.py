@@ -10,10 +10,12 @@ def _to_first_lower_pascal_case(snake_str: str) -> str:
     :return: PascalCase string with the first letter lower cased.
     :rtype: str
     """
-    return re.sub(r'_([a-z])', lambda x: x.group(1).upper(), snake_str)
+    return re.sub(r"_([a-z])", lambda x: x.group(1).upper(), snake_str)
 
 
-def print_command(command: str, message: str = "", **command_params: dict[str, Any]) -> None:
+def print_command(
+    command: str, message: str = "", **command_params: dict[str, Any]
+) -> None:
     """
      Prints a command to the log in the format "::COMMAND [COMMAND_PARAM=COMMAND_PARAM_VALUE,...]::MESSAGE
 
@@ -22,7 +24,10 @@ def print_command(command: str, message: str = "", **command_params: dict[str, A
     :param command_params: The commands parameters
     """
     command_params_str = ",".join(
-        f"{_to_first_lower_pascal_case(key)}={value}" for key, value in command_params.items() if value is not None)
+        f"{_to_first_lower_pascal_case(key)}={value}"
+        for key, value in command_params.items()
+        if value is not None
+    )
     print(f"::{command} {command_params_str}::{message}")
 
 
@@ -37,13 +42,13 @@ def debug(message: str) -> None:
 
 
 def notice(
-        message: str,
-        title: str = None,
-        file: str = None,
-        line: int = None,
-        end_line: int = None,
-        col: int = None,
-        end_column: int = None,
+    message: str,
+    title: str = None,
+    file: str = None,
+    line: int = None,
+    end_line: int = None,
+    col: int = None,
+    end_column: int = None,
 ) -> None:
     """
     Prints a notice message
@@ -61,13 +66,13 @@ def notice(
 
 
 def warning(
-        message: str,
-        title: str = None,
-        file: str = None,
-        line: int = None,
-        end_line: int = None,
-        col: int = None,
-        end_column: int = None,
+    message: str,
+    title: str = None,
+    file: str = None,
+    line: int = None,
+    end_line: int = None,
+    col: int = None,
+    end_column: int = None,
 ) -> None:
     """
     Prints a warning message
@@ -85,13 +90,13 @@ def warning(
 
 
 def error(
-        message: str,
-        title: str = None,
-        file: str = None,
-        line: int = None,
-        end_line: int = None,
-        col: int = None,
-        end_column: int = None,
+    message: str,
+    title: str = None,
+    file: str = None,
+    line: int = None,
+    end_line: int = None,
+    col: int = None,
+    end_column: int = None,
 ) -> None:
     """
     Prints an error message

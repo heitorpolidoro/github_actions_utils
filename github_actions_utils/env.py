@@ -3,7 +3,7 @@ from typing import Any, Callable
 
 
 def _str_to_bool(s: str) -> bool:
-    """ Converts string to boolean """
+    """Converts string to boolean"""
     return s.lower() in ["true", "1", "t", "y", "yes"]
 
 
@@ -61,6 +61,7 @@ class PrefixEnv:
     """
     A class to get environment variables with a prefix
     """
+
     def __init__(self, prefix: str, to_upper: bool = True):
         """
         :param prefix: The prefix of the ENV
