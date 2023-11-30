@@ -125,7 +125,7 @@ set_output("NAME", "Heitor")
 ### `erase_summary()`
 Write content in the job summary
 [[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary)]<br>
-![Overwrite.png](images/overwrite)
+![Overwrite.png](images/overwrite.png)
 Usage:
 ```python
 from github_actions_utils import append_summary, overwrite_summary, erase_summary

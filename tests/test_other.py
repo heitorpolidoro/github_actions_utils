@@ -40,10 +40,10 @@ def test_append_summary(summary):
 
 
 def test_overwrite_summary(summary):
-    append_summary("test overwrite 1")
-    overwrite_summary("test overwrite 2")
+    append_summary("test overwrite.png 1")
+    overwrite_summary("test overwrite.png 2")
     with open(summary, "r") as f:
-        assert f.read() == "test overwrite 2\n"
+        assert f.read() == "test overwrite.png 2\n"
 
 
 def test_erase_summary(summary):

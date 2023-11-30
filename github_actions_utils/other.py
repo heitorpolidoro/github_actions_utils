@@ -29,7 +29,7 @@ def overwrite_summary(message: str):
     """
     Overwrites the summary
 
-    :param message: Message to overwrite.
+    :param message: Message to overwrite.png.
     """
     with open(github.step_summary, "w") as f:
         f.write(f"{message}\n")
@@ -52,7 +52,3 @@ def add_system_path(path: str):
     """
     with open(github.path, "a") as f:
         f.write(f"{path}\n")
-
-
-def not_cover():
-    ...
