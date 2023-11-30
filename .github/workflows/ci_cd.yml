@@ -85,6 +85,11 @@ jobs:
         uses: microsoft/action-python@0.7.0
         with:
           black: true
+          bandit: true
+          flake8: true
+          pylint: true
+          pyright: true
+          pytest: true
           workdir: github_actions_utils
 #
 #      - name: Linter

@@ -52,3 +52,7 @@ def add_system_path(path: str):
     """
     with open(github.path, "a") as f:
         f.write(f"{path}\n")
+
+
+def not_cover():
+    ...
