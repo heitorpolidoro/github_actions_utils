@@ -85,10 +85,65 @@ jobs:
         uses: microsoft/action-python@0.7.0
         with:
           black: true
+          workdir: github_actions_utils
+  bandit:
+    name: Linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: bandit
+        uses: microsoft/action-python@0.7.0
+        with:
           bandit: true
+          workdir: github_actions_utils
+  flake8:
+    name: Linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: flake8
+        uses: microsoft/action-python@0.7.0
+        with:
           flake8: true
+          workdir: github_actions_utils
+  pylint:
+    name: Linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: pylint
+        uses: microsoft/action-python@0.7.0
+        with:
           pylint: true
+          workdir: github_actions_utils
+  pyright:
+    name: Linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: pyright
+        uses: microsoft/action-python@0.7.0
+        with:
           pyright: true
+          workdir: github_actions_utils
+  pytest:
+    name: Linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Pytest
+        uses: microsoft/action-python@0.7.0
+        with:
           pytest: true
           workdir: github_actions_utils
 #
