@@ -1,6 +1,5 @@
 # Github Actions Utils
 
-
 ![GitHub last commit](https://img.shields.io/github/last-commit/heitorpolidoro/github_actions_utils)
 [![Latest](https://img.shields.io/github/release/heitorpolidoro/github_actions_utils.svg?label=latest)](https://github.com/heitorpolidoro/github_actions_utils/releases/latest)
 ![GitHub Release Date](https://img.shields.io/github/release-date/heitorpolidoro/github_actions_utils)
@@ -11,12 +10,17 @@
 Github Actions Utils is a Python library to help creating actions
 
 ---
+
 ### Log utils
 
 ### `debug(message)`
+
 ### `notice(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`
+
 ### `warning(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`
+
 ### `error(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`
+
 ```python
 from github_actions_utils.log import debug, notice, warning, error
 
@@ -42,9 +46,13 @@ In the Files changes when a file is passed as a parameter:<br>
 ![In file](images/in_file.png)
 
 ---
+
 ### `start_group(name)`
+
 ### `end_group()`
+
 ### `group(name)`
+
 ```python
 from github_actions_utils.log import start_group, end_group
 
@@ -58,22 +66,30 @@ from github_actions_utils.log import group
 with group("Group title"):
     print("logs inside group")
 ```
+
 ![Group](images/group.png)
 
 ---
+
 ### `mask(value)`
+
 Mask:
+
 ```python
 from github_actions_utils.log import mask
 
 mask("This is a mask")
 print("Test This is a mask")
 ```
+
 ![Mask](images/mask.png)
 
 ---
+
 ### `set_env(env_name, value)`
+
 ### `get_env(env_name, default=None, type=None)`
+
 ```python
 from github_actions_utils.log import set_env, get_env
 
@@ -89,79 +105,3 @@ set_env("ENV_BOOL", "true")
 get_env("ENV_BOOL, type=bool")  # == True
 
 ```
-
-[//]: # (### Log Utils)
-[//]: # (#### github group decorator)
-
-[//]: # (```python)
-
-[//]: # (from github_actions_utils.log_utils import github_group)
-
-[//]: # ()
-[//]: # (@github_group&#40;"foo"&#41;)
-
-[//]: # (def foo&#40;&#41;:)
-
-[//]: # (    code)
-
-[//]: # (```)
-
-[//]: # (Will produce in github action log)
-
-[//]: # (```log)
-
-[//]: # (▸ foo)
-
-[//]: # (```)
-
-[//]: # (You can use the function parameters as input like:)
-
-[//]: # (```python)
-
-[//]: # (@github_group&#40;"Running $cmd"&#41;)
-
-[//]: # (def run&#40;cmd&#41;:)
-
-[//]: # (    code)
-
-[//]: # (```)
-
-[//]: # (When your code calls the `run` function will print user the value from `cmd` parameter:)
-
-[//]: # (```python)
-
-[//]: # (run&#40;"nice command"&#41;)
-
-[//]: # (```)
-
-[//]: # (```log)
-
-[//]: # (▸ Running nice command)
-
-[//]: # (```)
-
-[//]: # (Even if the value is an object and you want a value from the object attribute:)
-
-[//]: # (```python)
-
-[//]: # (@github_group&#40;"Hello $&#40;person.name&#41;"&#41;)
-
-[//]: # (def hello&#40;person&#41;:)
-
-[//]: # (    code)
-
-[//]: # (```)
-
-[//]: # (```python)
-
-[//]: # (p = Person&#40;name="Heitor"&#41;)
-
-[//]: # (hello&#40;p&#41;)
-
-[//]: # (```)
-
-[//]: # (```log)
-
-[//]: # (▸ Hello Heitor)
-
-[//]: # (```)
