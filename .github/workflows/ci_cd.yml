@@ -81,78 +81,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Black
-        uses: microsoft/action-python@0.7.0
+      - name: Linter
+        uses: heitorpolidoro/lint-with-PR-comments@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          black: true
-          workdir: github_actions_utils
-  bandit:
-    name: bandit
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: bandit
-        uses: microsoft/action-python@0.7.0
-        with:
-          bandit: true
-          workdir: github_actions_utils
-  flake8:
-    name: flake8
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: flake8
-        uses: microsoft/action-python@0.7.0
-        with:
-          flake8: true
-          workdir: github_actions_utils
-  pylint:
-    name: pylint
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: pylint
-        uses: microsoft/action-python@0.7.0
-        with:
-          pylint: true
-          workdir: github_actions_utils
-  pyright:
-    name: pyright
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: pyright
-        uses: microsoft/action-python@0.7.0
-        with:
-          pyright: true
-          workdir: github_actions_utils
-  pytest:
-    name: pytest
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Pytest
-        uses: microsoft/action-python@0.7.0
-        with:
-          pytest: true
-          workdir: github_actions_utils
-#
-#      - name: Linter
-#        uses: heitorpolidoro/lint-with-PR-comments@master
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          linters: flake8
+          linters: flake8
 
 #  auto-merge:
 #    name: Auto Merge
