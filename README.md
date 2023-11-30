@@ -10,7 +10,7 @@
 Github Actions Utils is a Python library to help creating actions
 
 ---
-
+## Messages
 ### `debug(message)`
 
 ### `notice(message, title=None, file=None, line=None, end_line=None, col=None, end_column=None)`
@@ -19,8 +19,8 @@ Github Actions Utils is a Python library to help creating actions
 
 ### `error(message, title=None, file=None, line=None, end_line=None, col=None, end_column=None)`
 
-Write messages in the Action log, annotation or file<br>
-[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-a-debug-message)<br>
+Write messages in the Action log, annotation or file 
+[[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-a-debug-message)]<br>
 In the Action log:<br>
 ![Log](images/log.png)
 
@@ -46,13 +46,14 @@ error("This is a error")
 error("This is a file error with title", title="Nice Title", file=filename)
 ```
 ---
-
+## Group
 ### `start_group(name)`
 
 ### `end_group()`
 
 ### `group(name)`
-Create a group log in Action log<br>
+Create a group log in Action log 
+[[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#grouping-log-lines)]<br>
 ![Group](images/group.png)
 
 Usage:
@@ -71,8 +72,10 @@ with group("Group title"):
 ```
 ---
 
+## Mask
 ### `mask(value)`
 Masks some secret value to avoid beem printed in the log
+[[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#masking-a-value-in-a-log)]<br>
 Usage:
 ```python
 from github_actions_utils import mask
@@ -83,11 +86,13 @@ print("Test This is a mask")
 ![Mask](images/mask.png)
 
 ---
-
+## Environment Variables
 ### `set_env(env_name, value)`
 
 ### `get_env(env_name, default=None, type=None)`
 Set and get environments variables, writing and reading in the default environment and from `GITHUB_ENV` file
+[[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#environment-files)]<br>
+
 ```python
 from github_actions_utils import set_env, get_env
 
@@ -104,10 +109,19 @@ get_env("ENV_BOOL, type=bool")  # == True
 
 ```
 ---
+## Output Parameter
 ### `set_output(name, value)`
 Set an output value to be used in another steps
+[[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-output-parameter)]<br>
+
 ```python
 from github_actions_utils import set_output
 
 set_output("NAME", "Heitor")
 ```
+---
+## Summary
+[[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary)]<br>
+---
+## System Path
+[[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-system-path)]<br>

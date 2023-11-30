@@ -10,8 +10,6 @@ def _to_first_lower_pascal_case(snake_str: str) -> str:
     :return: PascalCase string with the first letter lower cased.
     :rtype: str
     """
-    if not snake_str:
-        return snake_str
     return re.sub(r'_([a-z])', lambda x: x.group(1).upper(), snake_str)
 
 
@@ -52,12 +50,12 @@ def notice(
     https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-a-notice-message
 
     :param message: Message to print as notice
-    :param title:
-    :param file:
-    :param line:
-    :param end_line:
-    :param col:
-    :param end_column:
+    :param title: Custom title
+    :param file: Filename
+    :param line: Line number, starting at 1
+    :param end_line: End line number
+    :param col: Column number, starting at 1
+    :param end_column: End column number
     """
     print_command("notice", **locals())
 
@@ -74,6 +72,14 @@ def warning(
     """
     Prints a warning message
     https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-a-warning-message
+
+    :param message: Message to print as warning
+    :param title: Custom title
+    :param file: Filename
+    :param line: Line number, starting at 1
+    :param end_line: End line number
+    :param col: Column number, starting at 1
+    :param end_column: End column number
     """
     print_command("warning", **locals())
 
@@ -90,6 +96,14 @@ def error(
     """
     Prints an error message
     https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-error-message
+
+    :param message: Message to print as error
+    :param title: Custom title
+    :param file: Filename
+    :param line: Line number, starting at 1
+    :param end_line: End line number
+    :param col: Column number, starting at 1
+    :param end_column: End column number
     """
     print_command("error", **locals())
 
@@ -98,13 +112,15 @@ def start_group(name: str) -> None:
     """
     Start a group log
     https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#grouping-log-lines
+
+    :param name: Name of the group to start.
     """
     print_command("group", name)
 
 
 def end_group() -> None:
     """
-    End a group log
+    End the current group log
     https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#grouping-log-lines
     """
     print_command("endgroup")
@@ -115,6 +131,8 @@ def group(name: str):
     """
     Start and end a group log in a context manager
     https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#grouping-log-lines
+
+    :param name: Name of the group.
     """
     start_group(name)
     try:
@@ -127,5 +145,7 @@ def mask(value: str) -> None:
     """
     Mask a value it a log
     https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#masking-a-value-in-a-log
+
+    :param value: Value to be masked
     """
     print_command("add-mask", value)

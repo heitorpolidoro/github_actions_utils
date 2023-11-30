@@ -56,4 +56,4 @@ def test_group_context_exception(mock_print):
 
 def test_mask(mock_print):
     mask("test")
-    mock_print.assert_called_with("::add-mask ::te st")
+    mock_print.assert_called_with("::add-mask ::test")
