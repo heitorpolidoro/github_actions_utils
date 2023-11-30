@@ -69,4 +69,4 @@ def test_add_system_path(monkeypatch):
         monkeypatch.setenv("GITHUB_PATH", temp.name)
         add_system_path("test")
         with open(temp.name, "r") as f:
-            assert f.read() == "test\nd"
+            assert f.read() == "test\n"
