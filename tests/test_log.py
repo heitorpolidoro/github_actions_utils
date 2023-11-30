@@ -2,7 +2,16 @@ from unittest.mock import patch, call
 
 import pytest
 
-from github_actions_utils import debug, notice, warning, error, start_group, end_group, group, mask
+from github_actions_utils import (
+    debug,
+    notice,
+    warning,
+    error,
+    start_group,
+    end_group,
+    group,
+    mask,
+)
 
 
 @pytest.fixture(autouse=True)
@@ -44,7 +53,9 @@ def test_end_group(mock_print):
 def test_group_context(mock_print):
     with group("test"):
         print("Inside the group")
-    mock_print.assert_has_calls([call("::group ::test"), call("Inside the group"), call("::endgroup ::")])
+    mock_print.assert_has_calls(
+        [call("::group ::test"), call("Inside the group"), call("::endgroup ::")]
+    )
 
 
 def test_group_context_exception(mock_print):

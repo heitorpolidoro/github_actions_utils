@@ -3,7 +3,8 @@ import tempfile
 
 import pytest
 
-from github_actions_utils import set_env, get_env
+from github_actions_utils import set_env, get_env, inputs, github_envs
+from github_actions_utils.env import PrefixEnv
 
 
 @pytest.fixture(autouse=True)
@@ -53,8 +54,36 @@ def test_get_env_int(monkeypatch):
     assert get_env("TEST_ENV", type=int) == 42
 
 
+def test_get_env_default(monkeypatch):
+    assert get_env("TEST_ENV", default=42) == 42
+
+
+def test_get_env_casting_default(monkeypatch):
+    assert get_env("TEST_ENV", default=True, type=bool) is True
+
+
+def test_get_env_casting_without_default(monkeypatch):
+    assert get_env("TEST_ENV", type=int) is None
+
+
 def test_get_env_from_github_env():
     assert get_env("TEST_ENV") is None
     set_env("TEST_ENV", "test")
     del os.environ["TEST_ENV"]
     assert get_env("TEST_ENV") == "test"
+
+
+def test_inputs(monkeypatch):
+    monkeypatch.setenv("INPUT_PARAM", "value")
+    assert inputs.param == "value"
+
+
+def test_github_envs(monkeypatch):
+    monkeypatch.setenv("GITHUB_ENV", "value")
+    assert github_envs.env == "value"
+
+
+def test_prefix_env_to_upper_false(monkeypatch):
+    monkeypatch.setenv("prefixed_env", "value")
+    prefixed = PrefixEnv("prefixed", to_upper=False)
+    assert prefixed.env == "value"
