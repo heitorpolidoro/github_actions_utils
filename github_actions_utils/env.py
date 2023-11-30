@@ -33,6 +33,7 @@ def get_env(env: str, default: Any = None, type: type_ = None) -> Any:
         else:
             value = type(value)
     return value
+
 # TODO get all envs?
 # class GithubEnvs:
 #     def __getattr__(self, item):
