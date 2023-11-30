@@ -43,6 +43,5 @@ def get_env(env: str, default: Any = None, type: type_ = None) -> Any:
 #     def __getattr__(self, item):
 #         return get_input(item.upper())
 #
-#
 # github_envs = GithubEnvs()
 # inputs = Inputs()
