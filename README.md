@@ -121,7 +121,25 @@ set_output("NAME", "Heitor")
 ```
 ---
 ## Summary
+### `append_summary(message)`
+### `overwrite_summary(message)`
+### `erase_summary()`
+Write content in the job summary
 [[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary)]<br>
+```python
+from github_actions_utils import append_summary, overwrite_summary, erase_summary
+
+append_summary("This is a list")
+append_summary("- item 1")
+append_summary("""- item 2
+- item 3""")
+
+overwrite_summary("No more list")
+
+erase_summary()
+```
 ---
 ## System Path
+### `add_system_path(path)`
+Prepends a directory to the system PATH
 [[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-system-path)]<br>
