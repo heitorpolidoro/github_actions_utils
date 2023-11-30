@@ -6,7 +6,7 @@
 # from github.Auth import Token
 # from github.Repository import Repository
 #
-# from github_actions_utils.env import github_envs
+# from github_actions_utils import github_envs
 #
 #
 # def _extract_owner_and_repo_name(remote_url: str) -> tuple[str, str]:

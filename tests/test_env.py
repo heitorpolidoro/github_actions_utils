@@ -3,7 +3,7 @@ import tempfile
 
 import pytest
 
-from github_actions_utils.env import set_env, get_env
+from github_actions_utils import set_env, get_env
 
 
 @pytest.fixture(autouse=True)

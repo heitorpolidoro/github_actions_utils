@@ -2,7 +2,7 @@
 #
 # import pytest
 #
-# from github_actions_utils.github import get_github, _extract_owner_and_repo_name, get_commit_message_command
+# from github_actions_utils import get_github, _extract_owner_and_repo_name, get_commit_message_command
 #
 # COMMIT_COMMAND_PREFIX = "command"
 #

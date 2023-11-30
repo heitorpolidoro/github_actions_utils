@@ -22,7 +22,7 @@ Github Actions Utils is a Python library to help creating actions
 ### `error(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`
 
 ```python
-from github_actions_utils.log import debug, notice, warning, error
+from github_actions_utils import debug, notice, warning, error
 
 debug("This is a debug")
 
@@ -54,14 +54,14 @@ In the Files changes when a file is passed as a parameter:<br>
 ### `group(name)`
 
 ```python
-from github_actions_utils.log import start_group, end_group
+from github_actions_utils import start_group, end_group
 
 start_group("Group title")
 print("logs inside group")
 end_group()
 
 # OR
-from github_actions_utils.log import group
+from github_actions_utils import group
 
 with group("Group title"):
     print("logs inside group")
@@ -76,7 +76,7 @@ with group("Group title"):
 Mask:
 
 ```python
-from github_actions_utils.log import mask
+from github_actions_utils import mask
 
 mask("This is a mask")
 print("Test This is a mask")
@@ -91,7 +91,7 @@ print("Test This is a mask")
 ### `get_env(env_name, default=None, type=None)`
 
 ```python
-from github_actions_utils.log import set_env, get_env
+from github_actions_utils import set_env, get_env
 
 set_env("ENV_NAME", "env_value")
 get_env("ENV_NAME")  # == "env_value"
@@ -104,4 +104,11 @@ get_env("ENV_INT, type=int")  # == 42
 set_env("ENV_BOOL", "true")
 get_env("ENV_BOOL, type=bool")  # == True
 
+```
+---
+### `set_output(name, value)`
+```python
+from github_actions_utils import set_output
+
+set_output("NAME", "Heitor")
 ```
