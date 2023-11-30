@@ -71,11 +71,12 @@ with group("Group title"):
     print("logs inside group")
 ```
 ---
-
 ## Mask
 ### `mask(value)`
 Masks some secret value to avoid beem printed in the log
 [[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#masking-a-value-in-a-log)]<br>
+![Mask](images/mask.png)
+
 Usage:
 ```python
 from github_actions_utils import mask
@@ -83,8 +84,6 @@ from github_actions_utils import mask
 mask("This is a mask")
 print("Test This is a mask")
 ```
-![Mask](images/mask.png)
-
 ---
 ## Environment Variables
 ### `set_env(env_name, value)`
@@ -92,7 +91,7 @@ print("Test This is a mask")
 ### `get_env(env_name, default=None, type=None)`
 Set and get environments variables, writing and reading in the default environment and from `GITHUB_ENV` file
 [[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#environment-files)]<br>
-
+Usage:
 ```python
 from github_actions_utils import set_env, get_env
 
@@ -113,7 +112,7 @@ get_env("ENV_BOOL, type=bool")  # == True
 ### `set_output(name, value)`
 Set an output value to be used in another steps
 [[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-output-parameter)]<br>
-
+Usage:
 ```python
 from github_actions_utils import set_output
 
@@ -126,6 +125,8 @@ set_output("NAME", "Heitor")
 ### `erase_summary()`
 Write content in the job summary
 [[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-job-summary)]<br>
+![Overwrite.png](images/overwrite)
+Usage:
 ```python
 from github_actions_utils import append_summary, overwrite_summary, erase_summary
 

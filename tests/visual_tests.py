@@ -1,6 +1,4 @@
-from time import sleep
-
-from github_actions_utils import debug, notice, warning, error, group, mask, append_summary, overwrite_summary
+from github_actions_utils import debug, notice, warning, error, group, mask, append_summary
 
 file = "tests/visual_tests.py"
 
@@ -27,6 +25,3 @@ append_summary("- item 1")
 append_summary("""- item 2
 - item 3""")
 
-sleep(10)
-
-overwrite_summary("No more list")
