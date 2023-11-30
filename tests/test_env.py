@@ -13,11 +13,24 @@ def github_env(monkeypatch):
         yield temp.name
 
 
+@pytest.fixture(autouse=True)
+def clean_environ():
+    yield
+    if "TEST_ENV" in os.environ:
+        del os.environ["TEST_ENV"]
+
+
 def test_set_env(github_env):
     assert os.getenv("TEST_ENV") is None
     set_env("TEST_ENV", "test")
     with open(github_env, "r") as f:
         assert f.read() == "TEST_ENV=test"
+
+
+def test_set_env_in_environ():
+    assert os.getenv("TEST_ENV") is None
+    set_env("TEST_ENV", "test")
+    assert os.getenv("TEST_ENV") == "test"
 
 
 def test_get_env_not_existing():
@@ -43,4 +56,5 @@ def test_get_env_int(monkeypatch):
 def test_get_env_from_github_env():
     assert get_env("TEST_ENV") is None
     set_env("TEST_ENV", "test")
+    del os.environ["TEST_ENV"]
     assert get_env("TEST_ENV") == "test"

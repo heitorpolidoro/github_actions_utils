@@ -13,7 +13,7 @@ Github Actions Utils is a Python library to help creating actions
 ---
 ### Log utils
 
-### **`debug(message)`**
+### `debug(message)`
 ### `notice(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`
 ### `warning(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`
 ### `error(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`
@@ -41,7 +41,10 @@ In the Action summary:<br>
 In the Files changes when a file is passed as a parameter:<br>
 ![In file](images/in_file.png)
 
-Group:
+---
+### `start_group(name)`
+### `end_group()`
+### `group(name)`
 ```python
 from github_actions_utils.log import start_group, end_group
 
@@ -57,6 +60,8 @@ with group("Group title"):
 ```
 ![Group](images/group.png)
 
+---
+### `mask(value)`
 Mask:
 ```python
 from github_actions_utils.log import mask
@@ -65,6 +70,25 @@ mask("This is a mask")
 print("Test This is a mask")
 ```
 ![Mask](images/mask.png)
+
+---
+### `set_env(env_name, value)`
+### `get_env(env_name, default=None, type=None)`
+```python
+from github_actions_utils.log import set_env, get_env
+
+set_env("ENV_NAME", "env_value")
+get_env("ENV_NAME")  # == "env_value"
+
+get_env("ENV_DEFAULT", default="default")  # == "default"
+
+set_env("ENV_INT", "42")
+get_env("ENV_INT, type=int")  # == 42
+
+set_env("ENV_BOOL", "true")
+get_env("ENV_BOOL, type=bool")  # == True
+
+```
 
 [//]: # (### Log Utils)
 [//]: # (#### github group decorator)
