@@ -2,7 +2,7 @@ from unittest.mock import patch, call
 
 import pytest
 
-from github_actions_utils.log import debug, notice, warning, error, start_group, end_group, group, mask
+from github_actions_utils import debug, notice, warning, error, start_group, end_group, group, mask
 
 
 @pytest.fixture(autouse=True)

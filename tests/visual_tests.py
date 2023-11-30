@@ -1,4 +1,4 @@
-from github_actions_utils.log import debug, notice, warning, error, group, mask
+from github_actions_utils import debug, notice, warning, error, group, mask
 
 file = "tests/visual_tests.py"
 
