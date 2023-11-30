@@ -11,16 +11,26 @@ Github Actions Utils is a Python library to help creating actions
 
 ---
 
-### Log utils
-
 ### `debug(message)`
 
-### `notice(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`
+### `notice(message, title=None, file=None, line=None, end_line=None, col=None, end_column=None)`
 
-### `warning(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`
+### `warning(message, title=None, file=None, line=None, end_line=None, col=None, end_column=None)`
 
-### `error(message, title=None, file=None, col=None, end_column=None, line=None, end_line=None)`
+### `error(message, title=None, file=None, line=None, end_line=None, col=None, end_column=None)`
 
+Write messages in the Action log, annotation or file<br>
+[GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-a-debug-message)<br>
+In the Action log:<br>
+![Log](images/log.png)
+
+In the Action summary:<br>
+![Annotations](images/annotations.png)
+
+In the Files changes when a file is passed as a parameter:<br>
+![In file](images/in_file.png)
+
+Usage:
 ```python
 from github_actions_utils import debug, notice, warning, error
 
@@ -35,16 +45,6 @@ warning("This is a file warning with title", title="Nice Title", file=filename)
 error("This is a error")
 error("This is a file error with title", title="Nice Title", file=filename)
 ```
-
-In the Action log:<br>
-![Log](images/log.png)
-
-In the Action summary:<br>
-![Annotations](images/annotations.png)
-
-In the Files changes when a file is passed as a parameter:<br>
-![In file](images/in_file.png)
-
 ---
 
 ### `start_group(name)`
@@ -52,7 +52,10 @@ In the Files changes when a file is passed as a parameter:<br>
 ### `end_group()`
 
 ### `group(name)`
+Create a group log in Action log<br>
+![Group](images/group.png)
 
+Usage:
 ```python
 from github_actions_utils import start_group, end_group
 
@@ -66,22 +69,17 @@ from github_actions_utils import group
 with group("Group title"):
     print("logs inside group")
 ```
-
-![Group](images/group.png)
-
 ---
 
 ### `mask(value)`
-
-Mask:
-
+Masks some secret value to avoid beem printed in the log
+Usage:
 ```python
 from github_actions_utils import mask
 
 mask("This is a mask")
 print("Test This is a mask")
 ```
-
 ![Mask](images/mask.png)
 
 ---
@@ -89,7 +87,7 @@ print("Test This is a mask")
 ### `set_env(env_name, value)`
 
 ### `get_env(env_name, default=None, type=None)`
-
+Set and get environments variables, writing and reading in the default environment and from `GITHUB_ENV` file
 ```python
 from github_actions_utils import set_env, get_env
 
@@ -107,6 +105,7 @@ get_env("ENV_BOOL, type=bool")  # == True
 ```
 ---
 ### `set_output(name, value)`
+Set an output value to be used in another steps
 ```python
 from github_actions_utils import set_output
 
