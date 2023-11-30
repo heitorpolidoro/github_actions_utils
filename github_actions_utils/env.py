@@ -9,6 +9,7 @@ def _str_to_bool(s):
 
 
 def set_env(env_name: str, value: Any):
+    os.environ[env_name] = value
     with open(os.getenv("GITHUB_ENV"), "w") as f:
         f.write(f"{env_name}={value}")
 
@@ -32,6 +33,7 @@ def get_env(env: str, default: Any = None, type: type_ = None) -> Any:
         else:
             value = type(value)
     return value
+# TODO get all envs?
 # class GithubEnvs:
 #     def __getattr__(self, item):
 #         return get_github_env(item.upper())
