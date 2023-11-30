@@ -3,7 +3,7 @@ import tempfile
 
 import pytest
 
-from github_actions_utils import set_env, get_env, inputs, github_envs
+from github_actions_utils import set_env, get_env, inputs, github
 from github_actions_utils.env import PrefixEnv
 
 
@@ -80,7 +80,7 @@ def test_inputs(monkeypatch):
 
 def test_github_envs(monkeypatch):
     monkeypatch.setenv("GITHUB_ENV", "value")
-    assert github_envs.env == "value"
+    assert github.env == "value"
 
 
 def test_prefix_env_to_upper_false(monkeypatch):

@@ -15,7 +15,7 @@ def set_env(env_name: str, value: Any):
     :param value: The ENV value
     """
     os.environ[env_name] = value
-    with open(os.getenv("GITHUB_ENV"), "w") as f:
+    with open(github.env, "w") as f:
         f.write(f"{env_name}={value}")
 
 
@@ -26,13 +26,14 @@ def _get_env_from_github_env(env_name: str) -> str | None:
     :param env_name: The ENV name
     :return: The ENV value
     """
+    value = None
     with open(os.getenv("GITHUB_ENV"), "r") as f:
         for line in f:
             if line.startswith(env_name):
                 name, value = line.split("=")
                 os.environ[name] = value
 
-    return os.getenv(env_name)
+    return value
 
 
 # noinspection PyShadowingBuiltins
@@ -77,5 +78,5 @@ class PrefixEnv:
         return get_env(env_name)
 
 
-github_envs = PrefixEnv("GITHUB")
+github = PrefixEnv("GITHUB")  # TODO move to GithunPlus?
 inputs = PrefixEnv("INPUT")
