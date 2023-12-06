@@ -1,1 +1,1 @@
-Polidoro-PyGithub==2.2.0rc1
+Polidoro-PyGithub==2.2.0rc4
