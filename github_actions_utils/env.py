@@ -4,7 +4,7 @@ from typing import Any, Callable
 
 def _str_to_bool(s: str) -> bool:
     """Converts string to boolean"""
-    return s.lower() in ["true", "1", "t", "y", "yes"]
+    return s.lower() in {"true", "1", "t", "y", "yes"}
 
 
 def set_env(env_name: str, value: Any):
