@@ -78,5 +78,5 @@ class PrefixEnv:
         return get_env(env_name)
 
 
-github = PrefixEnv("GITHUB")  # TODO move to GithunPlus?
+github = PrefixEnv("GITHUB")
 inputs = PrefixEnv("INPUT")
